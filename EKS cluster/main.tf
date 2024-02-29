@@ -3,11 +3,12 @@ module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
 
   name = "jenkins-my-vpc"
-  cidr = var.vpc_cidr
+  cidr = var.vpc_cidr 
 
-  azs             = data.aws_availability_zone.azs.*.name
+  azs = data.aws_availability_zones.azs.names
   private_subnets = var.private_subnets
   public_subnets  = var.public_subnets
+  
 
   // enable_nat_gateway = true
   // enable_vpn_gateway = true
