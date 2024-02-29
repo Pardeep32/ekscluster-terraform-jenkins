@@ -67,7 +67,7 @@ module "eks" {
       max_size     = 3
       desired_size = 2
 
-      instance_types = ["t3.micro"]
+      instance_types = ["t2.micro"]
       // capacity_type  = "SPOT"
     }
   }
@@ -94,7 +94,6 @@ module "eks" {
     }
   }
   */
-
   tags = {
     Environment = "dev"
     Terraform   = "true"
