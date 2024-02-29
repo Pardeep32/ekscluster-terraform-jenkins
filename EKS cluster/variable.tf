@@ -12,13 +12,13 @@ variable "vpc_cidr" {
 variable "private_subnets" {
   description = "private subnet"
   type        = list(string)
-  default     = ["198.68.1.0/24", "198.68.2.0/24", "198.68.3.0/24"]
+  default     = ["192.68.1.0/24", "192.68.2.0/24", "192.68.3.0/24"]
 }
 
 variable "public_subnets" {
   description = "public subnet cidr"
   type        = list(string)
-  default     = ["192.68.4.0/24", "198.68.5.0/24", "198.68.4.0/24"]
+  default     = ["192.68.4.0/24", "192.68.5.0/24", "192.68.6.0/24"]
 }
 
 
