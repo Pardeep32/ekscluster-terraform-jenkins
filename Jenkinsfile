@@ -22,24 +22,7 @@ pipeline {
                 }
             }
         }
-        stage('Formatting Terraform Code'){
-            steps{
-                script{
-                    dir('EKS cluster'){
-                        sh 'terraform fmt'
-                    }
-                }
-            }
-        }
-        stage('Validating Terraform'){
-            steps{
-                script{
-                    dir('EKS cluster'){
-                        sh 'terraform validate'
-                    }
-                }
-            }
-        }
+        
         stage('Previewing the Infra using Terraform'){
             steps{
                 script{
@@ -54,21 +37,11 @@ pipeline {
             steps{
                 script{
                     dir('EKS cluster') {
-                        sh 'terraform $Action --auto-approve'
+                        sh 'terraform delete --auto-approve'
                     }
                 }
             }
         }
-        stage('Deploying Nginx Application') {
-            steps{
-                script{
-                    dir('EKS cluster/ConfigurationFiles') {
-                        sh 'aws eks update-kubeconfig --name my-eks-clusters'
-                        sh 'kubectl apply -f deployment.yaml'
-                        sh 'kubectl apply -f service.yaml'
-                    }
-                }
-            }
-        }
+        
     }
 }
