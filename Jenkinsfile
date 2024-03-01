@@ -37,7 +37,7 @@ pipeline {
             steps{
                 script{
                     dir('EKS cluster') {
-                        sh 'terraform delete --auto-approve'
+                        sh 'terraform $Action --auto-approve'
                     }
                 }
             }
