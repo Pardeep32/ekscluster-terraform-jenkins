@@ -10,7 +10,6 @@ module "vpc" {
   public_subnets  = var.public_subnets
   
 
-  // enable_nat_gateway = true
   // enable_vpn_gateway = true
   enable_dns_hostnames = true
   enable_nat_gateway   = true
@@ -38,7 +37,7 @@ module "eks" {
   cluster_version = "1.24"
    
   cluster_endpoint_public_access = true
-  /*
+  
   cluster_addons = {
     coredns = {
       most_recent = true
@@ -50,7 +49,7 @@ module "eks" {
       most_recent = true
     }
   }
-*/
+
 
   vpc_id     = module.vpc.vpc_id
   subnet_ids = module.vpc.private_subnets
@@ -75,7 +74,7 @@ module "eks" {
 
   # Cluster access entry
   # To add the current caller identity as an administrator
-  /*  enable_cluster_creator_admin_permissions = true
+    enable_cluster_creator_admin_permissions = true
 
   access_entries = {
     # One access entry with a policy associated
