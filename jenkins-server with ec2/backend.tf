@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
-    bucket = "trrraform-buckett-locking"
-    key    = "network/terraform.tfstate"
+    bucket = "terrraform-buckett-locking"
+    key    = "netwok/terraform.tfstate"
     region = "ca-central-1"
   }
 }
