@@ -75,7 +75,7 @@ module "ec2_instance" {
 
   //ami = data.aws_ami.ubuntu.id
   instance_type               = var.instance_type
-  key_name                    = "grfana"
+  key_name                    = "grafana"
   monitoring                  = true
   vpc_security_group_ids      = [module.sg.security_group_id]
   subnet_id                   = module.vpc.public_subnets[0]
