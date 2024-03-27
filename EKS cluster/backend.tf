@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
-    bucket = "terrraform-buckett-locking"
-    key    = "EKS/terraform.tfstate"
+    bucket = "redditbucketclone1708"
+    key    = "EKScluster/terraform.tfstate"
     region = "ca-central-1"
   }
 }
